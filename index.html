@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #dos {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+</head>
+<body>
+    <div id="dos"></div>
+
+    <script>
+        const options = {
+            1: 'files/ult.jsdos',
+            2: 'files/ii.jsdos',
+            3: 'files/tnt.jsdos',
+            4: 'files/plutonia.jsdos',
+            5: 'files/mdii.jsdos',
+            6: 'files/nerve.jsdos',
+            7: 'files/sigil1.jsdos',
+            8: 'files/sigil2.jsdos'
+        };
+
+        function loadDosFile(url) {
+            Dos(document.getElementById("dos"), {
+                url: url,
+            });
+        }
+
+        function promptUser() {
+            let choice;
+            do {
+                choice = prompt(
+                    "Choose an option (1-8):\n1: The Ultimate DOOM\n2: DOOM II: Hell on Earth\n3: TNT: Evilution\n4: The Plutonia Experiment\n5: Master Levels for DOOM II\n6: No Rest For The Living\n7: SIGIL 1\n8: SIGIL 2\nTip: In-game, press R to enable/disable always running."
+                );
+            } while (!options[choice]);
+
+            loadDosFile(options[choice]);
+        }
+
+        promptUser();
+    </script>
+</body>
+</html>
