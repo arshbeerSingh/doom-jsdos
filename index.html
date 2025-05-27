@@ -21,20 +21,7 @@
     <div id="dos"></div>
 
     <script>
-        const options = {
-            1: 'files/ult.jsdos',
-            2: 'files/ii.jsdos',
-            3: 'files/tnt.jsdos',
-            4: 'files/plutonia.jsdos',
-            5: 'files/mdii.jsdos',
-            6: 'files/nerve.jsdos',
-            7: 'files/sigil1.jsdos',
-            8: 'files/sigil2.jsdos'
-        };
-
         const optionSets = {
-            Boom: ['files/boom/ult.jsdos', 'files/boom/ii.jsdos', 'files/boom/tnt.jsdos', 'files/boom/plutonia.jsdos', 'files/boom/mdii.jsdos'],
-            MBF: ['files/mbf/ult.jsdos', 'files/mbf/ii.jsdos', 'files/mbf/tnt.jsdos', 'files/mbf/plutonia.jsdos', 'files/mbf/mdii.jsdos', 'files/mbf/nerve.jsdos', 'files/mbf/sigil1.jsdos', 'files/mbf/sigil2.jsdos'],
             AllInOne: ['files/all.jsdos']
         };
 
@@ -45,31 +32,8 @@
         }
 
         function promptUser() {
-            let choice;
-            do {
-                choice = prompt(
-                    "Choose a source port:\n1: Boom (buggy mouse)\n2: Marine's Best Friend (buggy mouse, worse performance)\n3: All-in-one"
-                );
-            } while (!['1', '2', '3'].includes(choice));
-
-            if (choice === '1') {
-                // Handle Boom option
-                const boomChoice = prompt(
-                    "Choose a game for Boom:\n1: The Ultimate DOOM\n2: DOOM II: Hell on Earth\n3: Final Doom - TNT: Evilution\n4: Final Doom - The Plutonia Experiment\n5: The Master Levels for DOOM II"
-                );
-                loadDosFile(optionSets.Boom[parseInt(boomChoice) - 1]);
-            } else if (choice === '2') {
-                // Handle MBF option
-                const mbfChoice = prompt(
-                    "Choose a game for Marine's Best Friend:\n1: The Ultimate DOOM\n2: DOOM II: Hell on Earth\n3: Final Doom - TNT: Evilution\n4: Final Doom - The Plutonia Experiment\n5: The Master Levels for DOOM II\n6: No Rest For The Living\n7: SIGIL 1\n8: SIGIL 2"
-                );
-                loadDosFile(optionSets.MBF[parseInt(mbfChoice) - 1]);
-            } else if (choice === '3') {
-                // Handle All-in-one option
-                loadDosFile(optionSets.AllInOne[0]);
-            }
+            loadDosFile(optionSets.AllInOne[0]);
         }
-
         promptUser();
     </script>
 </body>
